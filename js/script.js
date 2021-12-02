@@ -3,15 +3,16 @@ const t2 = document.querySelector(`#thumb2`)
 const t3 = document.querySelector(`#thumb3`)
 const lg = document.querySelector(`#largeimg`)
 
-// Will receive a reference to a thumbnail <img>, set its value to the large <img>
-const setLargeImgSrc = function(thumb) {
-  const url = thumb.getAttribute(`src`)
-  lg.setAttribute(`src`, url)
-}
 
 // Call setLargeImgSrc with the url from this thumbnail <img> (event.target)
+// Will receive a reference to a thumbnail <img>, set its value to the large <img>
 const handleThumbClick = function(event) {
-  setLargeImgSrc(event.target)
+  const thumb = event.target
+  const url = thumb.getAttribute(`src`)
+  lg.setAttribute(`src`, url)
+
+  // Same thing, but in one line
+  // lg.setAttribute(`src`, event.target.getAttribute(`src`))
 }
 
 // Add listeners to each thumbnail

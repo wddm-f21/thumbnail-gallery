@@ -4,6 +4,7 @@
 }
 .thumbs {
   display: flex;
+  flex-wrap: wrap;
 }
 .thumbnail {
   width: 33.333%;

@@ -15,7 +15,16 @@ const handleThumbClick = function(event) {
   // lg.setAttribute(`src`, event.target.getAttribute(`src`))
 }
 
+const doSomething = function() {
+  console.log(`Something!!!!`)
+}
+
 // Add listeners to each thumbnail
 t1.addEventListener(`click`, handleThumbClick)
-t2.addEventListener(`click`, handleThumbClick)
-t3.addEventListener(`click`, handleThumbClick)
+t2.addEventListener(`click`, function(event) {
+  doSomething()
+  handleThumbClick(event)
+})
+t3.addEventListener(`click`, function(event) {
+  handleThumbClick(event)
+})
